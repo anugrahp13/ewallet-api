@@ -1,11 +1,22 @@
+// {
+//     "compilerOptions": {
+//         "target": "ES6",
+//         "module": "Commonjs",
+//         "outDir": "./dist",
+//         "rootDir": "./src",
+//         "strict": true,
+//         "esModuleInterop": true,
+//         "skipLibCheck": true,
+//     }
+// }
+
 {
-    "compilerOptions": {
-        "target": "ES6",
-        "module": "Commonjs",
-        "outDir": "./dist",
-        "rootDir": "./src",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-    }
+  "compilerOptions": {
+    "target": "ES6", // Versi target JavaScript yang dihasilkan
+    "module": "CommonJS", // Menentukan modul system
+    "strict": true, // Aktifkan strict mode
+    "esModuleInterop": true, // Untuk import module lain seperti express
+    "skipLibCheck": true, // Untuk skip type-checking pada library
+    "forceConsistentCasingInFileNames": true
+  }
 }
