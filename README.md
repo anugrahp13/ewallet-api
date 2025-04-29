@@ -142,9 +142,6 @@ Aplikasi akan berjalan di `http://localhost:3000`
 
 Gunakan koleksi Postman atau kirim permintaan HTTP ke endpoint di atas.
 
-### 🔹 Otomatis (opsional)
-
-Buat file test dengan `Jest + Supertest` (belum disediakan).
 
 ## ✍️ Author
 
