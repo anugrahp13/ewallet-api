@@ -1,0 +1,248 @@
+{
+  "info": {
+    "name": "E-Wallet API",
+    "description": "Kumpulan request API untuk sistem e-wallet sederhana.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register Akun",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Budi\",\n  \"email\": \"budi@email.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cek Saldo Akun",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/balance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "balance"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Deposit Dana",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 100000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/deposit",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "deposit"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Withdraw Dana",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 50000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/withdraw",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "withdraw"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Transfer Dana ke Akun Lain",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"toAccountId\": 2,\n  \"amount\": 25000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/transfer",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "transfer"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Riwayat Transaksi",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/transactions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "transactions"
+          ]
+        }
+      }
+    },
+    {
+      "name": "\u274c Withdraw Melebihi Saldo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 9999999\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/withdraw",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "withdraw"
+          ]
+        }
+      }
+    },
+    {
+      "name": "\u274c Transfer ke Akun Tidak Ada",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"toAccountId\": 9999,\n  \"amount\": 10000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/transfer",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "transfer"
+          ]
+        }
+      }
+    },
+    {
+      "name": "\u274c Deposit dengan amount \u2264 0",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/accounts/1/deposit",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "accounts",
+            "1",
+            "deposit"
+          ]
+        }
+      }
+    }
+  ]
+}
